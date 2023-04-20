@@ -70,7 +70,7 @@ const NameAndDetails = () => {
         ) : (
           <textarea
             rows={4}
-            className=" text-black text-sm mt-4 outline-none bg-transparent resize-none w-full"
+            className="text-black text-sm mt-4 outline-none bg-transparent resize-none w-full"
             value={edit.description}
             style={{ outline: "none" }}
             onChange={(e) => handleChange(e, "description")}
