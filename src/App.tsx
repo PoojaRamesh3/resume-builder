@@ -1,4 +1,4 @@
-import ColorButton from "./components/ColorButton";
+// import ColorButton from "./components/ColorButton";
 import NameAndDetails from "./components/NameAndDetails";
 
 function App() {
