@@ -7,6 +7,7 @@ import {
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { useState } from "react";
 
+//Need to implement redux
 const NameAndDetails = () => {
   const [state, setstate] = useState("");
 
