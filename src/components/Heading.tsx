@@ -14,7 +14,7 @@ const Heading = (props: any) => {
   };
 
   return (
-    <div className="flex text-xl items-center text-red-bg">
+    <div className="flex text-xl items-center">
       {state !== "heading" ? (
         <div
           className="font-bold border-t-2 border-b-2 border-black"
@@ -25,7 +25,7 @@ const Heading = (props: any) => {
       ) : (
         <div className="flex text-xl items-center text-red-bg">
           <input
-            className="text-xl font-bold border-t-2 border-b-2 border-black text-red-bg outline-none bg-transparent uppercase"
+            className="text-xl font-bold border-t-2 border-b-2 border-black outline-none bg-transparent uppercase"
             type="text"
             value={edit.text}
             style={{ outline: "none", width: "fit-content" }}
