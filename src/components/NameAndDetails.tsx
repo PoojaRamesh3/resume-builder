@@ -46,14 +46,14 @@ const NameAndDetails = () => {
         )}
         {state !== "position" ? (
           <div
-            className="text-gray-500 text-md h-6 truncate"
+            className="text-gray-500 h-6 truncate"
             onClick={() => setstate("position")}
           >
             {edit.position}
           </div>
         ) : (
           <input
-            className="text-gray-500 text-md h-6 truncate"
+            className="text-gray-500 h-6 truncate"
             type="text"
             value={edit.position}
             style={{ outline: "none" }}
@@ -77,7 +77,7 @@ const NameAndDetails = () => {
           />
         )}
       </div>
-      <div className="w-12/12 md:w-6/12 md:pl-2 mt-6 md:mt-0 flex flex-col items-end">
+      <div className="w-1 md:w-6/12 md:pl-2 mt-6 md:mt-0 flex flex-col items-end">
         <div className="flex justify-center items-center w-full flex-row-reverse md:flex-row">
           {state !== "email" ? (
             <div
