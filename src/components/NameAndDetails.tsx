@@ -30,14 +30,14 @@ const NameAndDetails = () => {
       <div className="w-full md:w-5/12">
         {state !== "name" ? (
           <div
-            className="text-red-bg  text-2xl font-bold h-8"
+            className="text-2xl font-bold h-8"
             onClick={() => setstate("name")}
           >
             {edit.name}
           </div>
         ) : (
           <input
-            className="text-red-bg  text-2xl font-bold h-8"
+            className="text-2xl font-bold h-8"
             type="text"
             value={edit.name}
             style={{ outline: "none" }}
