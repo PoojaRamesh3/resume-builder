@@ -22,8 +22,6 @@ const initialData = {
   linkedin: "linkedin.com/in/username",
 };
 
-console.log("initailState", initialData);
-
 const initialState = { getData: initialData };
 
 const Reducer = (state = initialState, action: AnyAction) => {
