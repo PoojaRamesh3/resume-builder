@@ -71,7 +71,7 @@ const NameAndDetails = () => {
             name="position"
           />
         )}
-        {/*{state !== "desc" ? (
+        {state !== "desc" ? (
           <div
             className="text-black text-sm mt-4 line-clamp-4 text-ellipsis"
             onClick={() => setstate("desc")}
@@ -84,7 +84,8 @@ const NameAndDetails = () => {
             className="text-black text-sm mt-4 outline-none bg-transparent resize-none w-full"
             value={description}
             style={{ outline: "none" }}
-            onChange={(e) => dispatch(handleChange(e.target.value))}
+            onChange={(e) => handleChange(e)}
+            name="description"
           />
         )}
       </div>
@@ -104,7 +105,8 @@ const NameAndDetails = () => {
               type="text"
               value={email}
               style={{ outline: "none" }}
-              onChange={(e) => dispatch(handleChange(e.target.value))}
+              onChange={(e) => handleChange(e)}
+              name="email"
             />
           )}
           <FontAwesomeIcon
@@ -126,7 +128,8 @@ const NameAndDetails = () => {
               type="text"
               value={phone}
               style={{ outline: "none" }}
-              onChange={(e) => dispatch(handleChange(e.target.value))}
+              onChange={(e) => handleChange(e)}
+              name="phone"
             />
           )}
           <FontAwesomeIcon
@@ -148,7 +151,8 @@ const NameAndDetails = () => {
               type="text"
               value={city}
               style={{ outline: "none" }}
-              onChange={(e) => dispatch(handleChange(e.target.value))}
+              onChange={(e) => handleChange(e)}
+              name="city"
             />
           )}
           <FontAwesomeIcon
@@ -170,14 +174,15 @@ const NameAndDetails = () => {
               type="text"
               value={linkedin}
               style={{ outline: "none" }}
-              onChange={(e) => dispatch(handleChange(e.target.value))}
+              onChange={(e) => handleChange(e)}
+              name="linkedin"
             />
           )}
           <FontAwesomeIcon
             icon={faLinkedin}
             className="text-sm md:ml-2 text-red-bg"
           />
-        </div> */}
+        </div>
       </div>
     </div>
   );
