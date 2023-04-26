@@ -19,7 +19,7 @@ const initialData = {
   email: "example@domain.com",
   phone: 1234567890,
   city: "City, Country",
-  linkedin: "linkedin.com/in/username",
+  linkedin: "",
 };
 
 const initialState = { getData: initialData };
