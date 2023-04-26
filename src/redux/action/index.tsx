@@ -2,6 +2,7 @@ export const NAME = "NAME";
 export const POSITION = "POSITION";
 export const DESCRIPTION = "DESCRIPTION";
 export const EMAIL = "EMAIL";
+export const PHONE = "PHONE";
 
 export function handleNameChange(data: any) {
   return {
@@ -27,6 +28,13 @@ export function handleDescChange(data: any) {
 export function handleEmailChange(data: any) {
   return {
     type: EMAIL,
+    payload: data,
+  };
+}
+
+export function handlePhoneChange(data: any) {
+  return {
+    type: PHONE,
     payload: data,
   };
 }

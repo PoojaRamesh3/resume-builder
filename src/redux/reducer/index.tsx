@@ -3,6 +3,7 @@ import { NAME } from "../action";
 import { POSITION } from "../action";
 import { DESCRIPTION } from "../action";
 import { EMAIL } from "../action";
+import { PHONE } from "../action";
 
 export interface StateProps {
   name: string;
@@ -31,7 +32,6 @@ const Reducer = (state = initialState, action: AnyAction) => {
       return {
         ...state,
         name: action.payload,
-        // phone: action.payload,
         // city: action.payload,
         // linkedin: action.payload,
       };
@@ -51,6 +51,11 @@ const Reducer = (state = initialState, action: AnyAction) => {
       return {
         ...state,
         email: action.payload,
+      };
+    case PHONE:
+      return {
+        ...state,
+        phone: action.payload,
       };
     default:
       return state;
