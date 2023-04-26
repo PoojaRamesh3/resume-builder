@@ -22,14 +22,14 @@ const initialData = {
   linkedin: "linkedin.com/in/username",
 };
 
-const initialState = { initialData };
+const initialState = { getData: initialData };
 
 const Reducer = (state = initialState, action: AnyAction) => {
   switch (action.type) {
     case DATA:
       return {
         ...state,
-        initialState: action.payload,
+        getData: action.payload,
       };
 
     default:

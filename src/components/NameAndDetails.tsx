@@ -11,10 +11,20 @@ import { handleChange } from "../redux/action";
 
 const NameAndDetails = () => {
   const dispatch = useDispatch();
-  const edit = useSelector((state: any) => state);
-
+  const data = useSelector((state: any) => state.getData);
   const [state, setstate] = useState("");
+  const [alldata, setAlldata] = useState({
+    name: data.name,
+    position: data.position,
+    description: data.description,
+    email: data.email,
+    phone: data.phone,
+    city: data.city,
+    linkedin: data.linkedin,
+  });
+  const { name, position, description, email, phone, city, linkedin } = alldata;
 
+  // console.log("alldata", alldata);
   return (
     <div className="flex justify-between flex-wrap w-full font-Inter">
       <div className="w-full md:w-5/12">
@@ -23,13 +33,13 @@ const NameAndDetails = () => {
             className="text-2xl font-bold h-8"
             onClick={() => setstate("name")}
           >
-            {edit.name}
+            {name}
           </div>
         ) : (
           <input
             className="text-2xl font-bold h-8"
             type="text"
-            value={edit.name}
+            value={name}
             style={{ outline: "none" }}
             onChange={(e) => dispatch(handleChange(e.target.value))}
           />
@@ -39,13 +49,13 @@ const NameAndDetails = () => {
             className="text-gray-500 h-6 truncate"
             onClick={() => setstate("position")}
           >
-            {edit.position}
+            {position}
           </div>
         ) : (
           <input
             className="text-gray-500 h-6 truncate"
             type="text"
-            value={edit.position}
+            value={position}
             style={{ outline: "none" }}
             onChange={(e) => dispatch(handleChange(e.target.value))}
           />
@@ -55,13 +65,13 @@ const NameAndDetails = () => {
             className="text-black text-sm mt-4 line-clamp-4 text-ellipsis"
             onClick={() => setstate("desc")}
           >
-            {edit.description}
+            {description}
           </div>
         ) : (
           <textarea
             rows={4}
             className="text-black text-sm mt-4 outline-none bg-transparent resize-none w-full"
-            value={edit.description}
+            value={description}
             style={{ outline: "none" }}
             onChange={(e) => dispatch(handleChange(e.target.value))}
           />
@@ -75,13 +85,13 @@ const NameAndDetails = () => {
               className="text-black text-sm truncate w-full text-left md:text-right font-medium ml-2 md:ml-0"
               onClick={() => setstate("email")}
             >
-              {edit.email}
+              {email}
             </div>
           ) : (
             <input
               className="text-black text-sm truncate w-full text-left md:text-right font-medium ml-2 md:ml-0"
               type="text"
-              value={edit.email}
+              value={email}
               style={{ outline: "none" }}
               onChange={(e) => dispatch(handleChange(e.target.value))}
             />
@@ -97,13 +107,13 @@ const NameAndDetails = () => {
               className="text-black text-sm truncate w-full text-left md:text-right font-medium ml-2 md:ml-0"
               onClick={() => setstate("phone")}
             >
-              {edit.phone}
+              {phone}
             </div>
           ) : (
             <input
               className="text-black text-sm truncate w-full text-left md:text-right font-medium ml-2 md:ml-0"
               type="text"
-              value={edit.phone}
+              value={phone}
               style={{ outline: "none" }}
               onChange={(e) => dispatch(handleChange(e.target.value))}
             />
@@ -119,13 +129,13 @@ const NameAndDetails = () => {
               className="text-black text-sm truncate w-full text-left md:text-right font-medium ml-2 md:ml-0"
               onClick={() => setstate("city")}
             >
-              {edit.city}
+              {city}
             </div>
           ) : (
             <input
               className="text-black text-sm truncate w-full text-left md:text-right font-medium ml-2 md:ml-0"
               type="text"
-              value={edit.city}
+              value={city}
               style={{ outline: "none" }}
               onChange={(e) => dispatch(handleChange(e.target.value))}
             />
@@ -141,13 +151,13 @@ const NameAndDetails = () => {
               className="text-black text-sm truncate w-full text-left md:text-right font-medium ml-2 md:ml-0"
               onClick={() => setstate("linkedin")}
             >
-              {edit.linkedin}
+              {linkedin}
             </div>
           ) : (
             <input
               className="text-black text-sm truncate w-full text-left md:text-right font-medium ml-2 md:ml-0"
               type="text"
-              value={edit.linkedin}
+              value={linkedin}
               style={{ outline: "none" }}
               onChange={(e) => dispatch(handleChange(e.target.value))}
             />
