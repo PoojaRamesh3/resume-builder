@@ -1,6 +1,6 @@
 export const DATA = "DATA";
 
-export function handleChange(data: any) {
+export function handlegggChange(data: any) {
   return {
     type: DATA,
     payload: data,

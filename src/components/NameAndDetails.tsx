@@ -7,7 +7,8 @@ import {
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { handleChange } from "../redux/action";
+import { handlegggChange } from "../redux/action";
+import WorkExperinece from "./WorkExperinece";
 
 const NameAndDetails = () => {
   const dispatch = useDispatch();
@@ -24,7 +25,15 @@ const NameAndDetails = () => {
   });
   const { name, position, description, email, phone, city, linkedin } = alldata;
 
-  // console.log("alldata", alldata);
+  function handleChange(evt: any) {
+    const value = evt.target.value;
+    setAlldata({
+      ...alldata,
+      [evt.target.name]: value,
+    });
+    dispatch(handlegggChange(alldata));
+  }
+
   return (
     <div className="flex justify-between flex-wrap w-full font-Inter">
       <div className="w-full md:w-5/12">
@@ -41,7 +50,8 @@ const NameAndDetails = () => {
             type="text"
             value={name}
             style={{ outline: "none" }}
-            onChange={(e) => dispatch(handleChange(e.target.value))}
+            onChange={(e) => handleChange(e)}
+            name="name"
           />
         )}
         {state !== "position" ? (
@@ -57,10 +67,11 @@ const NameAndDetails = () => {
             type="text"
             value={position}
             style={{ outline: "none" }}
-            onChange={(e) => dispatch(handleChange(e.target.value))}
+            onChange={(e) => handleChange(e)}
+            name="position"
           />
         )}
-        {state !== "desc" ? (
+        {/*{state !== "desc" ? (
           <div
             className="text-black text-sm mt-4 line-clamp-4 text-ellipsis"
             onClick={() => setstate("desc")}
@@ -166,7 +177,7 @@ const NameAndDetails = () => {
             icon={faLinkedin}
             className="text-sm md:ml-2 text-red-bg"
           />
-        </div>
+        </div> */}
       </div>
     </div>
   );

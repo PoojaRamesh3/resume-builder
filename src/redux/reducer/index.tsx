@@ -12,7 +12,7 @@ export interface StateProps {
 }
 
 const initialData = {
-  name: "Your Name",
+  name: "Your Pooja",
   position: "Your Position",
   description:
     "Lorem ipsum dolor sit amet consectetur adipisicing elit.Architecto quaerat cupiditate sapiente iste odio veniam dolorum blanditiis incidunt?Praesentium laborum nobis ipsa modi cumque voluptates, iure aliquid asperiores sit. Ad.",
@@ -21,6 +21,8 @@ const initialData = {
   city: "City, Country",
   linkedin: "linkedin.com/in/username",
 };
+
+console.log("initailState", initialData);
 
 const initialState = { getData: initialData };
 
