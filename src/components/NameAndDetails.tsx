@@ -6,24 +6,17 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { handleNameChange } from "../redux/action";
+import { handlePositionChange } from "../redux/action";
+import { handleDescChange } from "../redux/action";
+import { handleEmailChange } from "../redux/action";
 
 const NameAndDetails = () => {
+  const dispatch = useDispatch();
+  const edit = useSelector((state: any) => state);
+
   const [state, setstate] = useState("");
-
-  const [edit, setEdit] = useState<any>({
-    name: "Your Name",
-    position: "Your Position",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit.Architecto quaerat cupiditate sapiente iste odio veniam dolorum blanditiis incidunt?Praesentium laborum nobis ipsa modi cumque voluptates, iure aliquid asperiores sit. Ad.",
-    email: "example@domain.com",
-    phone: 1234567890,
-    city: "City, Country",
-    linkedin: "linkedin.com/in/username",
-  });
-
-  const handleChange = (event: any, arg: any) => {
-    setEdit({ ...edit, [arg]: event.target.value });
-  };
 
   return (
     <div className="flex justify-between flex-wrap w-full font-Inter">
@@ -41,7 +34,7 @@ const NameAndDetails = () => {
             type="text"
             value={edit.name}
             style={{ outline: "none" }}
-            onChange={(e) => handleChange(e, "name")}
+            onChange={(e) => dispatch(handleNameChange(e.target.value))}
           />
         )}
         {state !== "position" ? (
@@ -57,7 +50,7 @@ const NameAndDetails = () => {
             type="text"
             value={edit.position}
             style={{ outline: "none" }}
-            onChange={(e) => handleChange(e, "position")}
+            onChange={(e) => dispatch(handlePositionChange(e.target.value))}
           />
         )}
         {state !== "desc" ? (
@@ -73,10 +66,11 @@ const NameAndDetails = () => {
             className="text-black text-sm mt-4 outline-none bg-transparent resize-none w-full"
             value={edit.description}
             style={{ outline: "none" }}
-            onChange={(e) => handleChange(e, "description")}
+            onChange={(e) => dispatch(handleDescChange(e.target.value))}
           />
         )}
       </div>
+
       <div className="w-1 md:w-6/12 md:pl-2 mt-6 md:mt-0 flex flex-col items-end">
         <div className="flex justify-center items-center w-full flex-row-reverse md:flex-row">
           {state !== "email" ? (
@@ -92,7 +86,7 @@ const NameAndDetails = () => {
               type="text"
               value={edit.email}
               style={{ outline: "none" }}
-              onChange={(e) => handleChange(e, "email")}
+              onChange={(e) => dispatch(handleEmailChange(e.target.value))}
             />
           )}
           <FontAwesomeIcon
@@ -100,7 +94,7 @@ const NameAndDetails = () => {
             className="text-sm md:ml-2 text-red-bg"
           />
         </div>
-        <div className="flex justify-center items-center w-full flex-row-reverse md:flex-row mt-4">
+        {/*<div className="flex justify-center items-center w-full flex-row-reverse md:flex-row mt-4">
           {state !== "phone" ? (
             <div
               className="text-black text-sm truncate w-full text-left md:text-right font-medium ml-2 md:ml-0"
@@ -114,7 +108,7 @@ const NameAndDetails = () => {
               type="text"
               value={edit.phone}
               style={{ outline: "none" }}
-              onChange={(e) => handleChange(e, "phone")}
+              onChange={(e) => dispatch(handleChange(e.target.value))}
             />
           )}
           <FontAwesomeIcon
@@ -136,7 +130,7 @@ const NameAndDetails = () => {
               type="text"
               value={edit.city}
               style={{ outline: "none" }}
-              onChange={(e) => handleChange(e, "city")}
+              onChange={(e) => dispatch(handleChange(e.target.value))}
             />
           )}
           <FontAwesomeIcon
@@ -158,14 +152,14 @@ const NameAndDetails = () => {
               type="text"
               value={edit.linkedin}
               style={{ outline: "none" }}
-              onChange={(e) => handleChange(e, "linkedin")}
+              onChange={(e) => dispatch(handleChange(e.target.value))}
             />
           )}
           <FontAwesomeIcon
             icon={faLinkedin}
             className="text-sm md:ml-2 text-red-bg"
           />
-        </div>
+        </div> */}
       </div>
     </div>
   );
