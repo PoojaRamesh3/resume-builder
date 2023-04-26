@@ -8,7 +8,6 @@ import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { handlegggChange } from "../redux/action";
-import WorkExperinece from "./WorkExperinece";
 
 const NameAndDetails = () => {
   const dispatch = useDispatch();
