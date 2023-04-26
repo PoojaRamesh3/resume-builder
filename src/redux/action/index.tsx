@@ -1,6 +1,6 @@
 export const DATA = "DATA";
 
-export function handleStore(data: any) {
+export function handlingStoreData(data: any) {
   return {
     type: DATA,
     payload: data,
