@@ -1,6 +1,6 @@
 // import ColorButton from "./components/ColorButton";
 import NameAndDetails from "./components/NameAndDetails";
-import WorkExperinece from "./components/WorkExperinece";
+// import WorkExperinece from "./components/WorkExperinece";
 
 function App() {
   return (
