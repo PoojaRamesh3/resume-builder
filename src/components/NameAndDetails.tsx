@@ -7,7 +7,7 @@ import {
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { handlegggChange } from "../redux/action";
+import { handleStore } from "../redux/action";
 
 const NameAndDetails = () => {
   const dispatch = useDispatch();
@@ -30,7 +30,7 @@ const NameAndDetails = () => {
       ...alldata,
       [evt.target.name]: value,
     });
-    dispatch(handlegggChange(alldata));
+    dispatch(handleStore(alldata));
   }
 
   return (
