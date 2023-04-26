@@ -1,40 +1,8 @@
-export const NAME = "NAME";
-export const POSITION = "POSITION";
-export const DESCRIPTION = "DESCRIPTION";
-export const EMAIL = "EMAIL";
-export const PHONE = "PHONE";
+export const DATA = "DATA";
 
-export function handleNameChange(data: any) {
+export function handleChange(data: any) {
   return {
-    type: NAME,
-    payload: data,
-  };
-}
-
-export function handlePositionChange(data: any) {
-  return {
-    type: POSITION,
-    payload: data,
-  };
-}
-
-export function handleDescChange(data: any) {
-  return {
-    type: DESCRIPTION,
-    payload: data,
-  };
-}
-
-export function handleEmailChange(data: any) {
-  return {
-    type: EMAIL,
-    payload: data,
-  };
-}
-
-export function handlePhoneChange(data: any) {
-  return {
-    type: PHONE,
+    type: DATA,
     payload: data,
   };
 }

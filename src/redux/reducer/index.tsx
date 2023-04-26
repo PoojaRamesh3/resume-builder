@@ -1,9 +1,5 @@
 import { AnyAction } from "redux";
-import { NAME } from "../action";
-import { POSITION } from "../action";
-import { DESCRIPTION } from "../action";
-import { EMAIL } from "../action";
-import { PHONE } from "../action";
+import { DATA } from "../action";
 
 export interface StateProps {
   name: string;
@@ -15,7 +11,7 @@ export interface StateProps {
   linkedin: string;
 }
 
-const initialState: StateProps = {
+const initialData = {
   name: "Your Name",
   position: "Your Position",
   description:
@@ -26,37 +22,16 @@ const initialState: StateProps = {
   linkedin: "linkedin.com/in/username",
 };
 
+const initialState = { initialData };
+
 const Reducer = (state = initialState, action: AnyAction) => {
   switch (action.type) {
-    case NAME:
+    case DATA:
       return {
         ...state,
-        name: action.payload,
-        // city: action.payload,
-        // linkedin: action.payload,
-      };
-    case POSITION:
-      return {
-        ...state,
-        position: action.payload,
+        initialState: action.payload,
       };
 
-    case DESCRIPTION:
-      return {
-        ...state,
-        description: action.payload,
-      };
-
-    case EMAIL:
-      return {
-        ...state,
-        email: action.payload,
-      };
-    case PHONE:
-      return {
-        ...state,
-        phone: action.payload,
-      };
     default:
       return state;
   }
