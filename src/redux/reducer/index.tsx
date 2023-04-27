@@ -9,6 +9,7 @@ export interface StateProps {
   phone: number;
   city: string;
   linkedin: string;
+  workexpheading: string;
 }
 
 const initialData = {
@@ -20,6 +21,7 @@ const initialData = {
   phone: 1234567890,
   city: "City, Country",
   linkedin: "linkedin.com/in/username",
+  workexpheading: "WORK EXPERIENCE",
 };
 
 const initialState = { getData: initialData };
