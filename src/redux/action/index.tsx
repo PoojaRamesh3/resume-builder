@@ -1,8 +1,16 @@
-export const DATA = "DATA";
+export const NAMESECTION = "NAMESECTION";
+export const WORKEXPERIENCE = "NAMESECTION";
 
-export function handlingStoreData(data: any) {
+export function handlingNameHeaderData(data: any) {
   return {
-    type: DATA,
+    type: NAMESECTION,
+    payload: data,
+  };
+}
+
+export function handlingWorkExperinceData(data: any) {
+  return {
+    type: WORKEXPERIENCE,
     payload: data,
   };
 }

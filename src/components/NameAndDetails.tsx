@@ -7,39 +7,42 @@ import {
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { handlingStoreData } from "../redux/action";
+import { handlingNameHeaderData } from "../redux/action";
 
 const NameAndDetails = () => {
-  const dispatch = useDispatch();
-  const data = useSelector((state: any) => state.getData);
-  const [state, setstate] = useState("");
-  const [alldata, setAlldata] = useState({
-    name: data.name,
-    position: data.position,
-    description: data.description,
-    email: data.email,
-    phone: data.phone,
-    city: data.city,
-    linkedin: data.linkedin,
-  });
-  const { name, position, description, email, phone, city, linkedin } = alldata;
+  const [show, setShow] = useState("");
 
-  function handleChange(evt: any) {
-    const value = evt.target.value;
-    setAlldata({
-      ...alldata,
-      [evt.target.name]: value,
+  const dispatch = useDispatch();
+  const storeData = useSelector((state: any) => state.namesection);
+
+  const [storeObj, setStoreObj] = useState({
+    name: storeData.name,
+    position: storeData.position,
+    description: storeData.description,
+    email: storeData.email,
+    phone: storeData.phone,
+    city: storeData.city,
+    linkedin: storeData.linkedin,
+  });
+  const { name, position, description, email, phone, city, linkedin } =
+    storeObj;
+
+  function handleChange(event: any) {
+    const value = event.target.value;
+    setStoreObj({
+      ...storeObj,
+      [event.target.name]: value,
     });
-    dispatch(handlingStoreData(alldata));
+    dispatch(handlingNameHeaderData(storeObj));
   }
 
   return (
     <div className="flex justify-between flex-wrap w-full font-Inter">
       <div className="w-full md:w-5/12">
-        {state !== "name" ? (
+        {show !== "name" ? (
           <div
             className="text-2xl font-bold h-8"
-            onClick={() => setstate("name")}
+            onClick={() => setShow("name")}
           >
             {name}
           </div>
@@ -53,10 +56,10 @@ const NameAndDetails = () => {
             name="name"
           />
         )}
-        {state !== "position" ? (
+        {show !== "position" ? (
           <div
             className="text-gray-500 h-6 truncate"
-            onClick={() => setstate("position")}
+            onClick={() => setShow("position")}
           >
             {position}
           </div>
@@ -70,10 +73,10 @@ const NameAndDetails = () => {
             name="position"
           />
         )}
-        {state !== "desc" ? (
+        {show !== "desc" ? (
           <div
             className="text-black text-sm mt-4 line-clamp-4 text-ellipsis"
-            onClick={() => setstate("desc")}
+            onClick={() => setShow("desc")}
           >
             {description}
           </div>
@@ -91,10 +94,10 @@ const NameAndDetails = () => {
 
       <div className="w-1 md:w-6/12 md:pl-2 mt-6 md:mt-0 flex flex-col items-end">
         <div className="flex justify-center items-center w-full flex-row-reverse md:flex-row">
-          {state !== "email" ? (
+          {show !== "email" ? (
             <div
               className="text-black text-sm truncate w-full text-left md:text-right font-medium ml-2 md:ml-0"
-              onClick={() => setstate("email")}
+              onClick={() => setShow("email")}
             >
               {email}
             </div>
@@ -114,10 +117,10 @@ const NameAndDetails = () => {
           />
         </div>
         <div className="flex justify-center items-center w-full flex-row-reverse md:flex-row mt-4">
-          {state !== "phone" ? (
+          {show !== "phone" ? (
             <div
               className="text-black text-sm truncate w-full text-left md:text-right font-medium ml-2 md:ml-0"
-              onClick={() => setstate("phone")}
+              onClick={() => setShow("phone")}
             >
               {phone}
             </div>
@@ -137,10 +140,10 @@ const NameAndDetails = () => {
           />
         </div>
         <div className="flex justify-center items-center w-full flex-row-reverse md:flex-row mt-4">
-          {state !== "city" ? (
+          {show !== "city" ? (
             <div
               className="text-black text-sm truncate w-full text-left md:text-right font-medium ml-2 md:ml-0"
-              onClick={() => setstate("city")}
+              onClick={() => setShow("city")}
             >
               {city}
             </div>
@@ -160,10 +163,10 @@ const NameAndDetails = () => {
           />
         </div>
         <div className="flex justify-center items-center w-full flex-row-reverse md:flex-row mt-4">
-          {state !== "linkedin" ? (
+          {show !== "linkedin" ? (
             <div
               className="text-black text-sm truncate w-full text-left md:text-right font-medium ml-2 md:ml-0"
-              onClick={() => setstate("linkedin")}
+              onClick={() => setShow("linkedin")}
             >
               {linkedin}
             </div>
